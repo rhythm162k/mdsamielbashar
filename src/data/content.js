@@ -32,8 +32,8 @@ export const PROJECTS = [
     tagline:
       "A multi-user movie diary with a React frontend and a REST API on PostgreSQL.",
     image: IMAGES.movieDiary,
-    live: "#", // TODO: live demo URL
-    repo: "#", // TODO: GitHub repo URL
+    live: "https://my-movie-diary.onrender.com/", // TODO: live demo URL
+    repo: "https://github.com/rhythm162k/my_movie_diary", // TODO: GitHub repo URL
     stats: [
       { to: 10, label: "REST API endpoints" },
       {
@@ -67,8 +67,8 @@ export const PROJECTS = [
     tagline:
       "A personal finance tracker that runs entirely in the browser, built with MVC.",
     image: IMAGES.firstCost,
-    live: "#",
-    repo: "#",
+    live: "https://rhythm162k.github.io/First-Cost/",
+    repo: "https://github.com/rhythm162k/First-Cost",
     stats: [
       { to: 10, label: "View classes on a shared base" },
       { to: 3, label: "Transaction types" },
