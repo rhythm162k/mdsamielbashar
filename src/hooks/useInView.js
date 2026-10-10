@@ -1,6 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
-// Flips to true the first time the element scrolls into view.
 export default function useInView() {
   const ref = useRef(null);
   const [seen, setSeen] = useState(false);
@@ -8,7 +7,7 @@ export default function useInView() {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    if (!('IntersectionObserver' in window)) {
+    if (!("IntersectionObserver" in window)) {
       setSeen(true);
       return;
     }
@@ -19,7 +18,7 @@ export default function useInView() {
           io.disconnect();
         }
       },
-      { threshold: 0.12, rootMargin: '0px 0px -6% 0px' }
+      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
     );
     io.observe(el);
     return () => io.disconnect();

@@ -32,8 +32,8 @@ export const PROJECTS = [
     tagline:
       "A multi-user movie diary with a React frontend and a REST API on PostgreSQL.",
     image: IMAGES.movieDiary,
-    live: "https://my-movie-diary.onrender.com/", // TODO: live demo URL
-    repo: "https://github.com/rhythm162k/my_movie_diary", // TODO: GitHub repo URL
+    live: "https://my-movie-diary.onrender.com/",
+    repo: "https://github.com/rhythm162k/my_movie_diary",
     stats: [
       { to: 10, label: "REST API endpoints" },
       {

@@ -1,8 +1,3 @@
-// Drop your files into /public/images, then point to them here.
-// Leave a value as null to keep the placeholder.
-//
-//   portrait: img('portrait.jpg'),
-//
 const img = (file) => `${import.meta.env.BASE_URL}images/${file}`;
 
 export const IMAGES = {

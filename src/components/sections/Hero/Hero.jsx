@@ -1,15 +1,15 @@
-import { useRef } from 'react';
-import useScrollFrame from '../../../hooks/useScrollFrame';
-import { prefersReducedMotion } from '../../../utils/motion';
-import { HERO, PROFILE } from '../../../data/content';
-import Button from '../../ui/Button';
-import ArrowLink from '../../ui/ArrowLink';
-import './Hero.css';
+import { useRef } from "react";
+import useScrollFrame from "../../../hooks/useScrollFrame";
+import { prefersReducedMotion } from "../../../utils/motion";
+import { HERO, PROFILE } from "../../../data/content";
+import Button from "../../ui/Button";
+import ArrowLink from "../../ui/ArrowLink";
+import "./Hero.css";
 
 export default function Hero() {
   const inner = useRef(null);
 
-  // The content drifts down and fades as you scroll away from it.
+  // The content drifts down and fades as scroll away from it.
   useScrollFrame(() => {
     const el = inner.current;
     if (!el || prefersReducedMotion) return;
@@ -26,8 +26,16 @@ export default function Hero() {
         <div className="hero-inner" ref={inner}>
           <p className="eyebrow hero-eyebrow">{PROFILE.name}</p>
           <h1 className="hero-title">
-            <span className="line"><span className="line-in" style={{ '--i': 0 }}>{HERO.line1}</span></span>
-            <span className="line"><span className="line-in muted" style={{ '--i': 1 }}>{HERO.line2}</span></span>
+            <span className="line">
+              <span className="line-in" style={{ "--i": 0 }}>
+                {HERO.line1}
+              </span>
+            </span>
+            <span className="line">
+              <span className="line-in muted" style={{ "--i": 1 }}>
+                {HERO.line2}
+              </span>
+            </span>
           </h1>
           <p className="hero-sub">{HERO.sub}</p>
           <div className="hero-cta">
