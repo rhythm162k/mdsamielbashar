@@ -1,0 +1,31 @@
+.resume {
+  padding: clamp(56px, 9vw, 104px) 0;
+}
+
+.resume-in {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px 48px;
+}
+.resume-sub {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: clamp(17px, 2vw, 21px);
+}
+.resume-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 560px) {
+  .resume-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .resume-actions .btn {
+    text-align: center;
+  }
+}

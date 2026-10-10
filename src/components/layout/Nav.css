@@ -1,0 +1,99 @@
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  padding-top: var(--safe-top);
+  background: var(--nav-bg);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.4s ease, background 0.4s ease;
+}
+.nav.solid { border-bottom-color: var(--line); }
+.nav.open { background: var(--bg); -webkit-backdrop-filter: none; backdrop-filter: none; }
+
+.nav-in { height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; }
+
+.brand { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
+.brand img { width: 22px; height: 22px; border-radius: 6px; object-fit: cover; }
+.logo-slot {
+  width: 22px; height: 22px;
+  border-radius: 6px;
+  border: 1px dashed var(--muted);
+  color: var(--muted);
+  display: grid; place-items: center;
+  font-size: 11px; font-weight: 600;
+}
+
+.nav-links { display: flex; gap: clamp(20px, 3vw, 34px); }
+.nav-links a { font-size: 13px; color: var(--muted); padding: 14px 0; transition: color 0.25s ease; }
+.nav-links a.on { color: var(--text); }
+@media (hover: hover) { .nav-links a:hover { color: var(--text); } }
+
+/* hamburger (phones and small tablets) */
+.menu-btn {
+  display: none;
+  position: relative;
+  width: 44px; height: 44px;
+  margin-right: -12px;
+  padding: 0;
+  background: none; border: 0;
+  color: var(--text);
+  cursor: pointer;
+}
+.menu-btn span {
+  position: absolute; left: 13px; right: 13px;
+  height: 1.5px;
+  background: currentColor;
+  transition: transform 0.45s var(--ease);
+}
+.menu-btn span:nth-child(1) { top: 19px; }
+.menu-btn span:nth-child(2) { top: 25px; }
+.nav.open .menu-btn span:nth-child(1) { transform: translateY(3px) rotate(45deg); }
+.nav.open .menu-btn span:nth-child(2) { transform: translateY(-3px) rotate(-45deg); }
+
+/* full-screen menu */
+.menu { display: none; }
+
+@media (max-width: 760px) {
+  .nav-links { display: none; }
+  .menu-btn { display: block; }
+
+  .menu {
+    display: block;
+    position: fixed; inset: 0;
+    z-index: 40;
+    background: var(--bg);
+    padding:
+      calc(var(--nav-h) + var(--safe-top) + 20px)
+      max(24px, var(--safe-right))
+      calc(24px + var(--safe-bottom))
+      max(24px, var(--safe-left));
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.45s ease, visibility 0s linear 0.45s;
+  }
+  .menu.open { opacity: 1; visibility: visible; transition: opacity 0.45s ease; }
+
+  .menu a {
+    display: block;
+    padding: 16px 0;
+    font-size: clamp(30px, 8.5vw, 44px);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    border-bottom: 1px solid var(--line);
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+  }
+  .menu.open a {
+    opacity: 1;
+    transform: none;
+    transition-delay: calc(var(--i) * 60ms + 80ms);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu a, .menu.open a { transition: none; transform: none; }
+}

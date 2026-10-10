@@ -1,0 +1,21 @@
+.about { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(32px, 7vw, 96px); align-items: center; }
+.about .h2 { margin: 12px 0 8px; }
+.school { color: var(--muted); font-size: 19px; }
+
+.facts { margin-top: 36px; }
+.fact { display: grid; grid-template-columns: 130px 1fr; gap: 16px; padding: 15px 0; border-top: 1px solid var(--line); font-size: 16px; }
+.fact:last-child { border-bottom: 1px solid var(--line); }
+.fact dt { color: var(--muted); }
+
+/* tablet portrait and below: stack, keep the portrait a sensible size */
+@media (max-width: 720px) {
+  .about { grid-template-columns: 1fr; align-items: start; }
+  .about-photo { max-width: 360px; }
+}
+
+@media (max-width: 560px) {
+  .about-photo { max-width: 300px; }
+  .school { font-size: 17px; }
+  .facts { margin-top: 28px; }
+  .fact { grid-template-columns: 1fr; gap: 2px; padding: 14px 0; }
+}

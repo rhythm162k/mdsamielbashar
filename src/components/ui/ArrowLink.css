@@ -1,0 +1,14 @@
+.arrow-link {
+  color: var(--accent);
+  font-size: 17px;
+  display: inline-flex;
+  gap: 6px;
+  align-items: baseline;
+  padding: 10px 0; /* comfortable tap target */
+}
+.arrow-link span { display: inline-block; transition: transform 0.35s var(--ease); }
+
+@media (hover: hover) {
+  .arrow-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .arrow-link:hover span { transform: translateX(4px); }
+}

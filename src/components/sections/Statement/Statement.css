@@ -1,0 +1,14 @@
+.statement-section { padding-top: clamp(24px, 6vw, 72px); }
+
+.statement {
+  font-size: clamp(24px, 4.4vw, 52px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.18;
+  max-width: 920px;
+}
+.statement .w { opacity: 0.2; }
+
+@media (prefers-reduced-motion: reduce) {
+  .statement .w { opacity: 1 !important; }
+}
