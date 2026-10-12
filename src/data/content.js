@@ -13,6 +13,7 @@ export const NAV_LINKS = [
   { id: "work", label: "Work" },
   { id: "about", label: "About" },
   { id: "skills", label: "Skills" },
+  { id: "resume", label: "Resume" },
   { id: "contact", label: "Contact" },
 ];
 
