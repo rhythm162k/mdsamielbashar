@@ -50,6 +50,7 @@ export const PROJECTS = [
       "Sessions are stored in PostgreSQL and sent as httpOnly, secure, sameSite cookies. Google sign-in runs through Passport.js.",
       "Every query is parameterized and scoped to the signed-in user. Unauthenticated requests to movie routes get a 401.",
       "Posters come from the OMDb API with a fallback image. Duplicate entries are rejected case-insensitively with a 409.",
+      "111+ integration tests with Vitest and Supertest against an isolated PostgreSQL test database",
       "Deployed on Render with production CORS, environment-based configuration and SPA routing.",
     ],
     tags: [
@@ -60,6 +61,8 @@ export const PROJECTS = [
       "PostgreSQL",
       "Supabase",
       "Passport.js",
+      "Vitest",
+      "Supertest",
     ],
   },
   {
