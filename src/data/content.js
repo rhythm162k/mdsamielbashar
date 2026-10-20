@@ -36,7 +36,7 @@ export const PROJECTS = [
     live: "https://my-movie-diary.onrender.com/",
     repo: "https://github.com/rhythm162k/my_movie_diary",
     stats: [
-      { to: 10, label: "REST API endpoints" },
+      { to: 10, suffix: "+", label: "REST API endpoints" },
       {
         to: 99,
         prefix: "~",
