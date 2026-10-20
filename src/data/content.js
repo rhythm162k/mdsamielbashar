@@ -116,9 +116,9 @@ export const SKILLS = [
     ],
   ],
   ["Databases", ["PostgreSQL", "SQL", "Relational schema design"]],
-  ["Frontend", ["React", "JavaScript", "HTML", "CSS"]],
+  ["Frontend", ["React", "vite", "JavaScript", "HTML", "CSS"]],
   ["Testing", ["Vitest", "Supertest", "React Testing Library"]],
-  ["Tools", ["Git", "GitHub", "Render", "Environment-based config"]],
+  ["Tools", ["Git", "GitHub", "Postman", "Render", "Environment-based config"]],
 ];
 
 export const RESUME = {
