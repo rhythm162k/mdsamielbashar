@@ -1,0 +1,81 @@
+/* Design tokens: the one place for colours, fonts and spacing variables.
+   Change a colour here and the whole site follows.
+   Light theme is the default; the dark block below applies when the visitor's system is in dark mode. */
+
+:root {
+  color-scheme: light dark;
+
+  /* surfaces */
+  --bg: #fbfbfd;
+  --bg-alt: #f5f5f7;
+  --media: #e8e8ed;
+  --line: rgba(0, 0, 0, 0.12);
+  --nav-bg: rgba(251, 251, 253, 0.72);
+
+  /* text */
+  --text: #1d1d1f;
+  --text-2: #424245; /* slightly stronger than --muted; used on top of the coloured blobs */
+  --muted: #6e6e73;
+
+  /* brand colours (cyan + navy, from the HE portfolio) */
+  --accent: #0071a0; /* links and small coloured text; passes contrast on light backgrounds */
+  --accent-fill: #003176; /* button background */
+  --accent-fill-hover: #0b4ba8;
+  --on-accent: #ffffff; /* text colour on top of --accent-fill */
+  --grad-a: #007aa0; /* gradient text: start... */
+  --grad-b: #003176; /* ...and end */
+
+  /* soft background blobs */
+  --blob-a: #0bbde0;
+  --blob-b: #0a6cff;
+  --blob-c: #003176;
+  --blob-opacity: 0.32;
+
+  /* "inverse" sections are always dark (preloader, ticker, contact) */
+  --inv-bg: #071426;
+  --inv-text: #f5f5f7;
+  --inv-muted: #a1a1a6;
+  --inv-accent: #3fd4f2;
+  --inv-line: rgba(255, 255, 255, 0.16);
+
+  /* fonts */
+  --font-display:
+    "JetBrains Mono Variable", "JetBrains Mono", "SF Mono", Menlo, Consolas,
+    monospace;
+  --font-body:
+    "Inter Variable", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:
+    "JetBrains Mono Variable", "JetBrains Mono", "SF Mono", Menlo, Consolas,
+    monospace;
+
+  /* motion + layout */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --nav-h: 48px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --bg-alt: #161617;
+    --media: #2a2a2d;
+    --line: rgba(255, 255, 255, 0.16);
+    --nav-bg: rgba(0, 0, 0, 0.72);
+
+    --text: #f5f5f7;
+    --text-2: #d2d2d7;
+    --muted: #a1a1a6;
+
+    --accent: #3fd4f2;
+    --accent-fill: #3fd4f2;
+    --accent-fill-hover: #7be3f7;
+    --on-accent: #00172e;
+    --grad-a: #5fe3ff;
+    --grad-b: #4f8cff;
+
+    --blob-opacity: 0.36;
+  }
+}

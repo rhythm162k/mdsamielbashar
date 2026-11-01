@@ -1,0 +1,156 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + var(--safe-top));
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.5;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input,
+textarea {
+  font: inherit;
+}
+h1,
+h2,
+h3,
+p,
+ul,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+
+::selection {
+  background: var(--accent-fill);
+  color: var(--on-accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- layout ---------- */
+.wrap {
+  margin: 0 auto;
+  padding-right: max(clamp(20px, 5vw, 40px), var(--safe-right));
+  padding-left: max(clamp(20px, 5vw, 40px), var(--safe-left));
+  max-width: 1080px;
+}
+@media (min-width: 1440px) {
+  .wrap {
+    max-width: 1200px;
+  }
+}
+
+.section {
+  padding: clamp(80px, 14vw, 168px) 0;
+}
+.alt {
+  background: var(--bg-alt);
+}
+
+/* ---------- type ---------- */
+/* Display = the big serif italic headings. Eyebrow = the small mono label above them. */
+.display {
+  font-weight: 500;
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+.eyebrow {
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 12.5px;
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.h2 {
+  font-weight: 500;
+  font-size: clamp(42px, 7vw, 92px);
+  line-height: 1;
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+.muted {
+  color: var(--muted);
+}
+
+/* cyan-to-navy gradient text (padding stops the italic edge being clipped) */
+.text-gradient {
+  background: linear-gradient(90deg, var(--grad-a), var(--grad-b));
+  -webkit-background-clip: text;
+  background-clip: text;
+  padding-right: 0.08em;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.sr-only {
+  position: absolute;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+  white-space: nowrap;
+}
+
+/* ---------- scroll reveal ---------- */
+.reveal {
+  transform: translateY(30px);
+  opacity: 0;
+  transition:
+    opacity 1s var(--ease),
+    transform 1s var(--ease);
+  transition-delay: var(--d, 0ms);
+}
+.reveal.in {
+  transform: none;
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    transform: none;
+    opacity: 1;
+    transition: none;
+  }
+}

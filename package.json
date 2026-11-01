@@ -1,23 +1,18 @@
 {
-  "name": "portfolio",
+  "name": "rhythm-portfolio",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://rhythm162k.github.io/mdsamielbashar",
+  "description": "Personal portfolio: React (Vite) front end + Node/Express back end for the contact form.",
+  "workspaces": ["client", "server"],
+  "engines": { "node": ">=20.19" },
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
-  },
-  "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "dev": "concurrently -n api,web -c blue,cyan \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w client",
+    "start": "npm run start -w server",
+    "test": "npm run test -w server"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^6.1.2",
-    "gh-pages": "^6.1.1",
-    "vite": "^8.3.4"
+    "concurrently": "^9.0.0"
   }
 }

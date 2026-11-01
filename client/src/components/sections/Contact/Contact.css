@@ -1,0 +1,225 @@
+/* The contact section is always dark, in light and dark mode. */
+.contact {
+  background: var(--inv-bg);
+  padding-bottom: calc(32px + var(--safe-bottom));
+  color: var(--inv-text);
+}
+.contact :focus-visible {
+  outline-color: var(--inv-accent);
+}
+.contact .h2 {
+  margin-top: 18px;
+  font-size: clamp(54px, 10vw, 128px);
+  line-height: 0.95;
+}
+.contact .status {
+  color: var(--inv-muted);
+}
+.contact .pulse-dot {
+  background: var(--inv-accent);
+}
+.lead {
+  margin-top: 24px;
+  max-width: 520px;
+  color: var(--inv-muted);
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.4;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  align-items: start;
+  gap: clamp(40px, 7vw, 96px);
+  margin-top: clamp(40px, 6vw, 72px);
+}
+
+/* ---- form ---- */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.field label {
+  color: var(--inv-muted);
+  font-size: 12.5px;
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.field input,
+.field textarea {
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+  border: 1px solid var(--inv-line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 14px 16px;
+  width: 100%;
+  color: var(--inv-text);
+  font-size: 17px;
+}
+.field textarea {
+  min-height: 160px;
+  resize: vertical;
+  line-height: 1.5;
+}
+.field input:focus-visible,
+.field textarea:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(63, 212, 242, 0.25);
+  border-color: var(--inv-accent);
+  background: rgba(255, 255, 255, 0.08);
+}
+.field [aria-invalid="true"] {
+  border-color: #ff9e95;
+}
+.field-error {
+  color: #ff9e95;
+  font-size: 14px;
+}
+
+/* invisible spam trap */
+.hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+  margin-top: 8px;
+}
+.form-status {
+  flex: 1 1 240px;
+  min-height: 1.5em;
+  color: var(--inv-muted);
+  font-size: 15px;
+}
+.form-status a {
+  color: var(--inv-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---- side column ---- */
+.contact-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.side-label {
+  color: var(--inv-muted);
+  font-size: 12.5px;
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.mail {
+  display: inline-block;
+  transition: background-size 0.6s var(--ease);
+  margin-top: 14px;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 2px
+    no-repeat;
+  padding-bottom: 4px;
+  color: var(--inv-accent);
+  font-weight: 600;
+  font-size: clamp(19px, 2.4vw, 24px);
+  letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
+}
+@media (hover: hover) {
+  .mail:hover {
+    background-size: 100% 2px;
+  }
+}
+.mail:active {
+  background-size: 100% 2px;
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+  margin-top: 20px;
+}
+.socials a {
+  transition: color 0.25s ease;
+  padding: 10px 0;
+  color: var(--inv-muted);
+  font-size: 17px;
+}
+@media (hover: hover) {
+  .socials a:hover {
+    color: var(--inv-text);
+  }
+}
+.where {
+  margin-top: 12px;
+  color: var(--inv-muted);
+  font-size: 15px;
+}
+
+/* ---- the big name ---- */
+.wordmark {
+  margin-top: clamp(56px, 9vw, 120px);
+
+  font-weight: 500;
+  font-size: clamp(80px, 21vw, 232px);
+  line-height: 1.05;
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+.wm-mask {
+  display: inline-block;
+  padding: 0.04em 0.06em 0.06em;
+  overflow: hidden;
+}
+.wm-char {
+  display: inline-block;
+  transform: translateY(110%);
+  transition: transform 1s var(--ease);
+  transition-delay: calc(var(--i) * 60ms);
+  background: linear-gradient(180deg, #e6fbff 0%, #5fe3ff 50%, #0a6cff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.wordmark.in .wm-char {
+  transform: none;
+}
+
+.foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 6px 12px;
+  margin-top: clamp(24px, 4vw, 48px);
+  border-top: 1px solid var(--inv-line);
+  padding-top: 22px;
+  color: var(--inv-muted);
+  font-size: 13px;
+}
+
+@media (max-width: 860px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wm-char {
+    transform: none;
+    transition: none;
+  }
+}

@@ -1,0 +1,157 @@
+.work {
+  position: relative;
+  isolation: isolate; /* lets the blobs sit behind the cards */
+  padding-top: clamp(40px, 6vw, 80px);
+  overflow: hidden;
+}
+.work-head {
+  margin-bottom: clamp(36px, 6vw, 72px);
+}
+.work-head .h2 {
+  margin-top: 12px;
+}
+
+.project {
+  margin-bottom: clamp(20px, 3vw, 36px);
+  border-radius: 28px;
+  background: var(--bg-alt);
+  padding: clamp(24px, 5vw, 64px);
+}
+
+.p-top {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: clamp(28px, 4vw, 48px);
+}
+.p-title {
+  font-weight: 500;
+  font-size: clamp(44px, 6.4vw, 84px);
+  line-height: 1;
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+.p-tag {
+  max-width: 640px;
+  color: var(--muted);
+  font-size: clamp(17px, 2vw, 23px);
+  line-height: 1.35;
+}
+.p-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 26px;
+  margin-top: 2px;
+}
+
+/* stats (kept in Inter so the numbers stay crisp and aligned) */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: clamp(32px, 5vw, 64px) 0;
+}
+.stat-n {
+  font-weight: 700;
+  font-size: clamp(36px, 6vw, 72px);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+}
+.stat-n .unit {
+  margin-left: 0.15em;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.4em;
+  letter-spacing: -0.01em;
+}
+.stat-l {
+  margin-top: 10px;
+  max-width: 200px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+/* points + tags */
+.points li {
+  border-top: 1px solid var(--line);
+  padding: 18px 0;
+  max-width: 760px;
+}
+.points li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 28px;
+}
+.tag {
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease;
+  border: 1px solid var(--line);
+  border-radius: 980px;
+  padding: 5px 13px;
+  color: var(--muted);
+  font-size: 12px;
+  font-family: var(--font-mono);
+}
+@media (hover: hover) {
+  .tag:hover {
+    border-color: var(--muted);
+    color: var(--text);
+  }
+}
+
+/* tablet portrait */
+@media (max-width: 900px) {
+  .project {
+    border-radius: 24px;
+  }
+  .stats {
+    gap: 16px;
+  }
+}
+
+/* phones: stats become tidy rows instead of three cramped columns */
+@media (max-width: 560px) {
+  .project {
+    border-radius: 20px;
+    padding: 24px 20px 28px;
+  }
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin: 28px 0 24px;
+  }
+  .stat {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    border-top: 1px solid var(--line);
+    padding: 16px 0;
+  }
+  .stat:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+  .stat-n {
+    min-width: 128px;
+    font-size: 44px;
+  }
+  .stat-l {
+    margin-top: 0;
+    max-width: none;
+    font-size: 15px;
+  }
+  .points li {
+    padding: 16px 0;
+    font-size: 16px;
+  }
+  .points li:first-child {
+    border-top: 0;
+  }
+}

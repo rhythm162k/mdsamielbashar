@@ -1,0 +1,36 @@
+.preloader {
+  display: grid;
+  position: fixed;
+  place-items: center;
+  z-index: 100;
+  transition: transform 0.85s cubic-bezier(0.76, 0, 0.24, 1);
+  inset: 0;
+  background: var(--inv-bg);
+  color: #fff;
+}
+.preloader.leaving {
+  transform: translateY(-100%);
+}
+
+.preloader-name {
+  display: flex;
+
+  font-weight: 500;
+  font-size: clamp(56px, 16vw, 180px);
+  line-height: 1;
+  font-family: var(--font-display);
+  letter-spacing: -0.07em;
+}
+.preloader-name span {
+  display: inline-block;
+  transform: translateY(40%);
+  opacity: 0;
+  animation: pre-in 0.7s var(--ease) forwards;
+  animation-delay: calc(var(--i) * 70ms + 100ms);
+}
+@keyframes pre-in {
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}

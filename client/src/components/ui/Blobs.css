@@ -1,0 +1,35 @@
+.blobs {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: var(--blob-opacity);
+  will-change: transform;
+  animation: blob-drift 24s ease-in-out infinite alternate;
+}
+.b1 { width: 46vmax; height: 46vmax; left: -14vmax; top: 6%;  background: var(--blob-a); }
+.b2 { width: 38vmax; height: 38vmax; right: -12vmax; top: -8%; background: var(--blob-b); animation-duration: 30s; animation-delay: -7s; }
+.b3 { width: 34vmax; height: 34vmax; left: 32%; bottom: -20vmax; background: var(--blob-c); animation-duration: 36s; animation-delay: -13s; }
+
+.blobs--soft .blob { opacity: calc(var(--blob-opacity) * 0.7); }
+.blobs--soft .b3 { display: none; }
+
+@keyframes blob-drift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(6vmax, -4vmax, 0) scale(1.15); }
+}
+
+/* phones: lighter blur and one fewer blob (big blurs are expensive on small GPUs) */
+@media (max-width: 760px) {
+  .blob { filter: blur(44px); }
+  .b3 { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .blob { animation: none; }
+}

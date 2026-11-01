@@ -1,0 +1,134 @@
+.hero {
+  display: flex;
+  position: relative;
+  align-items: center;
+  isolation: isolate; /* keeps the blobs behind the text but above the page background */
+  padding-top: calc(96px + var(--safe-top));
+  padding-bottom: 72px;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+}
+.hero-inner {
+  will-change: transform, opacity;
+}
+
+.hero-eyebrow {
+  opacity: 0;
+  animation: hero-fade 1.2s var(--ease) 0.1s forwards;
+  color: var(--text-2);
+}
+
+.hero-title {
+  margin-top: 18px;
+
+  font-weight: 500;
+  font-size: clamp(50px, 12vw, 132px);
+  line-height: 1;
+  font-family: var(--font-display);
+  letter-spacing: -0.07em;
+}
+.line {
+  display: block;
+  margin-bottom: -0.14em;
+  padding-bottom: 0.14em;
+  overflow: hidden;
+}
+.line-in {
+  display: block;
+  transform: translateY(112%);
+  animation: hero-rise 1.2s var(--ease) forwards;
+  animation-delay: calc(0.18s + var(--i) * 0.13s);
+}
+
+.hero-sub {
+  opacity: 0;
+  animation: hero-fade 1.2s var(--ease) 0.7s forwards;
+  margin-top: 28px;
+  max-width: 520px;
+  color: var(--text-2);
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.4;
+}
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 28px;
+  opacity: 0;
+  animation: hero-fade 1.2s var(--ease) 0.85s forwards;
+  margin-top: 36px;
+}
+
+/* the "open to internships" badge (also used in the contact section) */
+.status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-2);
+  font-size: 13px;
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+}
+.hero-status {
+  opacity: 0;
+  animation: hero-fade 1.2s var(--ease) 1s forwards;
+  margin-top: 44px;
+}
+
+@keyframes hero-rise {
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes hero-fade {
+  to {
+    opacity: 1;
+  }
+}
+
+/* hold the entrance animation while the preloader is on screen */
+html.is-loading .hero-eyebrow,
+html.is-loading .line-in,
+html.is-loading .hero-sub,
+html.is-loading .hero-cta,
+html.is-loading .hero-status {
+  animation-play-state: paused;
+}
+
+@media (max-width: 560px) {
+  .hero {
+    padding-bottom: 56px;
+  }
+  .hero-sub {
+    margin-top: 22px;
+  }
+  .hero-cta {
+    margin-top: 28px;
+  }
+  .hero-status {
+    margin-top: 36px;
+  }
+}
+
+/* phones held sideways: don't force a tall hero */
+@media (max-height: 480px) and (orientation: landscape) {
+  .hero {
+    padding-top: calc(88px + var(--safe-top));
+    min-height: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line-in {
+    transform: none;
+    animation: none;
+  }
+  .hero-eyebrow,
+  .hero-sub,
+  .hero-cta,
+  .hero-status {
+    opacity: 1;
+    animation: none;
+  }
+}

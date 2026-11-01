@@ -1,0 +1,24 @@
+.pulse-dot {
+  position: relative;
+  display: inline-block;
+  flex: none;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.pulse-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: inherit;
+  animation: pulse 1.8s ease-out infinite;
+}
+@keyframes pulse {
+  from { transform: scale(1); opacity: 0.55; }
+  to   { transform: scale(2.6); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pulse-dot::after { animation: none; }
+}

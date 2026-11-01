@@ -1,0 +1,34 @@
+.btn {
+  display: inline-block;
+  transition: transform 0.35s var(--ease), background 0.25s ease;
+  border: 0;
+  border-radius: 980px;
+  background: var(--accent-fill);
+  padding: 14px 26px;
+  color: var(--on-accent);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.2;
+  cursor: pointer;
+}
+.btn:active { transform: scale(0.97); }
+.btn[disabled] { opacity: 0.6; cursor: progress; }
+
+.btn--secondary {
+  box-shadow: inset 0 0 0 1px var(--accent);
+  background: transparent;
+  color: var(--accent);
+}
+
+/* for the always-dark contact section */
+.btn--accent {
+  background: var(--inv-accent);
+  color: #04121f;
+}
+
+@media (hover: hover) {
+  .btn:hover { transform: scale(1.04); background: var(--accent-fill-hover); }
+  .btn.btn--secondary:hover { box-shadow: none; background: var(--accent-fill); color: var(--on-accent); }
+  .btn.btn--accent:hover { background: #7be3f7; }
+  .btn[disabled]:hover { transform: none; }
+}

@@ -1,0 +1,56 @@
+.media-wrap { --media-radius: 32px; }
+
+/* the tilt: JS only sets --rx and --ry, this applies them */
+.tilt {
+  transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.6s var(--ease);
+  will-change: transform;
+}
+
+.media {
+  border-radius: var(--media-radius);
+  background: var(--media);
+  overflow: hidden;
+}
+.media img,
+.media-empty {
+  transition: transform 1.4s var(--ease);
+  width: 100%;
+  height: 100%;
+}
+.media img { object-fit: cover; }
+.media-empty {
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+}
+.media--natural img { height: auto; object-fit: initial; }
+
+/* wipe-in reveal: hidden until it scrolls into view, then the clip opens downward.
+   The end value is slightly larger than the box so nothing stays clipped afterwards. */
+.media--reveal { clip-path: inset(0 0 100% 0 round var(--media-radius)); }
+.media--reveal.in { animation: media-reveal 1.2s cubic-bezier(0.77, 0, 0.18, 1) forwards; }
+@keyframes media-reveal {
+  from { clip-path: inset(0 0 100% 0 round var(--media-radius)); }
+  to   { clip-path: inset(-12% -12% -12% -12% round var(--media-radius)); }
+}
+
+@media (hover: hover) {
+  .media:hover img,
+  .media:hover .media-empty { transform: scale(1.035); }
+}
+
+@media (max-width: 560px) {
+  .media-wrap { --media-radius: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .media--reveal { clip-path: none; }
+  .media--reveal.in { animation: none; }
+  .tilt { transform: none; }
+  .media:hover img,
+  .media:hover .media-empty { transform: none; }
+}
