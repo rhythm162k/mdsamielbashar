@@ -72,7 +72,7 @@ export const PROJECTS = [
         suffix: " ms",
         label: "Warm response on the movie-list endpoint",
       },
-      { to: 15, label: "bcrypt salt rounds" },
+      { to: 12, label: "bcrypt salt rounds" },
     ],
     points: [
       "React and Vite on the front, a Node.js and Express API behind it, with Supabase-hosted PostgreSQL underneath.",
