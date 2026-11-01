@@ -7,7 +7,7 @@
 
 **Building web applications. Learning by shipping. Improving every day.**
 
-[Portfolio](https://rhythm162k.github.io/mdsamielbashar/) ·
+[Portfolio](https://mdsamielbashar.com/) ·
 [LinkedIn](https://www.linkedin.com/in/md-sami-el-bashar-rhythm-24100b27b/) ·
 [Email](mailto:mdsamielbashar@gmail.com)
 
