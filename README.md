@@ -21,7 +21,7 @@ You need Node **20.19 or newer** (22 is the safest choice; Vite 8 needs it). Che
 
 ```bash
 npm install        # installs the client AND the server (npm workspaces)
-npm run dev        # starts both: site on http://localhost:5173, API on :5001
+npm run dev        # starts both: site on http://localhost:5173, API on :8787
 ```
 
 Open **http://localhost:5173**. (Stop the servers any time with `Ctrl + C` in the terminal.) The contact form already works in development: with no email settings it prints the message in the terminal instead of sending it.
@@ -30,7 +30,7 @@ Other commands:
 
 ```bash
 npm run build      # builds the site into client/dist
-npm start          # production mode: Express serves the built site AND the API on :5001
+npm start          # production mode: Express serves the built site AND the API on :8787
 npm test           # server tests (Vitest + Supertest)
 ```
 

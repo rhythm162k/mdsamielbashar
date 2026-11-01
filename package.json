@@ -3,16 +3,19 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Personal portfolio: React (Vite) front end + Node/Express back end for the contact form.",
-  "workspaces": ["client", "server"],
+  "description": "Personal portfolio: React (Vite) front end + Cloudflare Worker for the contact form.",
+  "workspaces": ["client"],
   "engines": { "node": ">=20.19" },
   "scripts": {
-    "dev": "concurrently -n api,web -c blue,cyan \"npm run dev -w server\" \"npm run dev -w client\"",
+    "dev": "concurrently -n api,web -c blue,cyan \"npm run dev:api\" \"npm run dev -w client\"",
+    "dev:api": "mkdir -p client/dist && wrangler dev --port 8787",
     "build": "npm run build -w client",
-    "start": "npm run start -w server",
-    "test": "npm run test -w server"
+    "deploy": "npm run build && wrangler deploy",
+    "test": "vitest run"
   },
   "devDependencies": {
-    "concurrently": "^9.0.0"
+    "concurrently": "^9.0.0",
+    "vitest": "^4.1.0",
+    "wrangler": "^4.0.0"
   }
 }
