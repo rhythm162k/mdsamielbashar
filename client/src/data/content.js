@@ -14,7 +14,7 @@ export const PROFILE = {
 // Shows a small pulsing "open to work" badge in the hero and contact sections.
 // Set open to false to hide it everywhere.
 export const AVAILABLE = {
-  open: true,
+  open: false,
   label: "Open to internship opportunities",
 };
 
@@ -31,7 +31,12 @@ export const TICKER = [
 ];
 
 // Contact form limits. Keep in sync with server/lib/validate.js
-export const CONTACT_LIMITS = { nameMin: 2, nameMax: 80, messageMin: 10, messageMax: 2000 };
+export const CONTACT_LIMITS = {
+  nameMin: 2,
+  nameMax: 80,
+  messageMin: 10,
+  messageMax: 2000,
+};
 
 export const NAV_LINKS = [
   { id: "work", label: "Work" },
