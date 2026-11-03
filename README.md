@@ -1,4 +1,3 @@
-
 <div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=venom&height=200&color=0:0F172A,50:1D4ED8,100:06B6D4&text=Rhythm&fontColor=FFFFFF&fontSize=65&fontAlignY=45&desc=Full-Stack%20Web%20Developer&descSize=18&descAlignY=68&animation=fadeIn" width="100%" />
