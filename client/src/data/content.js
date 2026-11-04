@@ -1,5 +1,3 @@
-// Everything you read on the page lives in this file. Edit text here, not in the components.
-
 import { IMAGES } from "./images";
 
 export const PROFILE = {
@@ -11,8 +9,6 @@ export const PROFILE = {
   location: "Mymensingh, Bangladesh",
 };
 
-// Shows a small pulsing "open to work" badge in the hero and contact sections.
-// Set open to false to hide it everywhere.
 export const AVAILABLE = {
   open: false,
   label: "Open to internship opportunities",
@@ -21,13 +17,15 @@ export const AVAILABLE = {
 // The scrolling band under the hero.
 export const TICKER = [
   "React",
+  "TypeScript",
   "Node.js",
   "Express",
   "PostgreSQL",
   "REST APIs",
   "Authentication",
+  "Multi-tenancy",
   "Testing",
-  "Deployment",
+  "Docker",
 ];
 
 // Contact form limits. Keep in sync with server/lib/validate.js
@@ -57,33 +55,55 @@ export const STATEMENT =
 
 export const PROJECTS = [
   {
-    name: "My Movie Diary",
-    date: "Aug 2026",
+    name: "Kin CRM",
+    date: "Nov 2026",
     tagline:
-      "A multi-user movie diary with a React frontend and a REST API on PostgreSQL.",
-    image: IMAGES.movieDiary,
-    live: "https://my-movie-diary.onrender.com/",
-    repo: "https://github.com/rhythm162k/my_movie_diary",
+      "A multi-tenant CRM for managing contacts, companies, sales deals, tasks and activities.",
+    image: IMAGES.kinCRM,
+    live: "https://kin-crm-ngei.onrender.com",
+    repo: "https://github.com/rhythm162k/Kin_CRM",
     stats: [
-      { to: 10, suffix: "+", label: "REST API endpoints" },
-      {
-        to: 99,
-        prefix: "~",
-        suffix: " ms",
-        label: "Warm response on the movie-list endpoint",
-      },
-      { to: 12, label: "bcrypt salt rounds" },
+      { to: 224, label: "Automated tests" },
+      { to: 3, label: "Workspace roles" },
+      { to: 5, label: "Core CRM modules" },
     ],
     points: [
-      "React and Vite on the front, a Node.js and Express API behind it, with Supabase-hosted PostgreSQL underneath.",
-      "Sessions are stored in PostgreSQL and sent as httpOnly, secure, sameSite cookies. Google sign-in runs through Passport.js.",
-      "Every query is parameterized and scoped to the signed-in user. Unauthenticated requests to movie routes get a 401.",
-      "Posters come from the OMDb API with a fallback image. Duplicate entries are rejected case-insensitively with a 409.",
-      "111+ integration tests with Vitest and Supertest against an isolated PostgreSQL test database",
-      "Deployed on Render with production CORS, environment-based configuration and SPA routing.",
+      "Built a full-stack TypeScript CRM in an npm-workspaces monorepo using React, Express, PostgreSQL and Drizzle ORM.",
+      "Implemented multi-tenant isolation with PostgreSQL Row-Level Security and role-based permissions for owners, admins and members.",
+      "Added JWT and Google OAuth authentication, shared Zod validation, audit logging, and secure CSV import/export.",
     ],
     tags: [
       "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Zod",
+      "Vitest",
+    ],
+  },
+  {
+    name: "My Movie Diary",
+    date: "Aug 2026",
+    tagline:
+      "A multi-user movie diary with a TypeScript React frontend and PostgreSQL-backed REST API.",
+    image: IMAGES.movieDiary,
+    live: "https://my-movie-diary.onrender.com",
+    repo: "https://github.com/rhythm162k/my_movie_diary",
+    stats: [
+      { to: 11, label: "REST API endpoints" },
+      { to: 120, label: "Automated tests" },
+      { to: 10, label: "bcrypt salt rounds" },
+    ],
+    points: [
+      "Converted the full-stack application to TypeScript, with a React frontend, Express API and Supabase-hosted PostgreSQL.",
+      "Implemented PostgreSQL-backed sessions, secure HTTP-only cookies, bcrypt password hashing and Google OAuth 2.0.",
+      "Integrated OMDb poster lookup and user-scoped movie operations, backed by 120 integration tests and Dockerized local development.",
+    ],
+    tags: [
+      "React",
+      "TypeScript",
       "Vite",
       "Node.js",
       "Express",
@@ -92,27 +112,8 @@ export const PROJECTS = [
       "Passport.js",
       "Vitest",
       "Supertest",
+      "Docker",
     ],
-  },
-  {
-    name: "First Cost",
-    date: "Jun 2026",
-    tagline:
-      "A personal finance tracker that runs entirely in the browser, built with MVC.",
-    image: IMAGES.firstCost,
-    live: "https://rhythm162k.github.io/First-Cost/",
-    repo: "https://github.com/rhythm162k/First-Cost",
-    stats: [
-      { to: 10, label: "View classes on a shared base" },
-      { to: 3, label: "Transaction types" },
-      { to: 4, label: "Metrics on the dashboard" },
-    ],
-    points: [
-      "Written in plain JavaScript with a model layer, a controller and ten view classes extending one base Views class.",
-      "Tracks multiple accounts, filters by three criteria, and charts spending with two Chart.js charts.",
-      "Data lives in localStorage. Deployed to GitHub Pages with a single Parcel build command.",
-    ],
-    tags: ["JavaScript", "OOP", "MVC", "Chart.js", "Parcel"],
   },
 ];
 
@@ -131,23 +132,39 @@ export const EDUCATION = {
 };
 
 export const SKILLS = [
+  ["Frontend", ["React", "TypeScript", "JavaScript", "HTML", "CSS", "Vite"]],
   [
     "Backend",
     [
       "Node.js",
       "Express.js",
       "REST API design",
-      "OOP",
+      "JWT",
       "Session auth",
       "OAuth 2.0",
       "bcrypt",
+      "Zod",
       "CORS",
     ],
   ],
-  ["Databases", ["PostgreSQL", "SQL", "Relational schema design"]],
-  ["Frontend", ["React", "vite", "JavaScript", "HTML", "CSS"]],
-  ["Testing", ["Vitest", "Supertest", "React Testing Library"]],
-  ["Tools", ["Git", "GitHub", "Postman", "Render", "Environment-based config"]],
+  [
+    "Databases",
+    [
+      "PostgreSQL",
+      "SQL",
+      "Drizzle ORM",
+      "Relational schema design",
+      "Row-Level Security",
+    ],
+  ],
+  [
+    "Testing",
+    ["Vitest", "Supertest", "React Testing Library", "Integration testing"],
+  ],
+  [
+    "Tools & Platforms",
+    ["Git", "GitHub", "Docker", "Postman", "Render", "Supabase"],
+  ],
 ];
 
 export const RESUME = {
