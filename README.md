@@ -15,7 +15,7 @@
 ### `TECH STACK`
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=js,react,nodejs,express,postgres,html" />
+  <img src="https://skillicons.dev/icons?i=js,ts,react,nodejs,express,postgres,html" />
 </p>
 <p align="center">
   <img src="https://skillicons.dev/icons?i=css,git,github,docker,aws" />
@@ -28,27 +28,28 @@
 <tr>
 <td width="50%" valign="top">
 
-<h3>🎬 My Movie Diary</h3>
+<h3>🏢 Dumb CRM</h3>
 
-A full-stack movie diary with Google OAuth, session authentication, and a tested REST API.
+A multi-tenant CRM with workspace isolation, role-based access control, and 224 automated tests.
 
-**React · Node.js · Express · PostgreSQL**
+**React · TypeScript · Node.js · Express · PostgreSQL**
 
-<a href="https://github.com/rhythm162k/my_movie_diary">↗ Explore project</a>
+<a href="https://github.com/rhythm162k/Dumb_CRM">↗ Explore project</a>
 
 </td>
 <td width="50%" valign="top">
 
-<h3>💰 First Cost</h3>
+<h3>🎬 My Movie Diary</h3>
 
-A personal finance tracker built with vanilla JavaScript and the MVC architecture.
+A full-stack movie diary with Google OAuth, session authentication, and 120 automated tests.
 
-**JavaScript · MVC · Chart.js**
+**React · TypeScript · Node.js · Express · PostgreSQL**
 
-<a href="https://github.com/rhythm162k/First-Cost">↗ Explore project</a>
+<a href="https://github.com/rhythm162k/my_movie_diary">↗ Explore project</a>
 
 </td>
 </tr>
+
 </table>
 
 <br/>
