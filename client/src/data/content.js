@@ -55,13 +55,13 @@ export const STATEMENT =
 
 export const PROJECTS = [
   {
-    name: "Kin CRM",
+    name: "Dumb CRM",
     date: "Nov 2026",
     tagline:
       "A multi-tenant CRM for managing contacts, companies, sales deals, tasks and activities.",
-    image: IMAGES.kinCRM,
-    live: "https://kin-crm-ngei.onrender.com",
-    repo: "https://github.com/rhythm162k/Kin_CRM",
+    image: IMAGES.dumb_crm,
+    live: "https://dumb-crm-bjby.onrender.com/",
+    repo: "https://github.com/rhythm162k/Dumb_CRM",
     stats: [
       { to: 224, label: "Automated tests" },
       { to: 3, label: "Workspace roles" },
