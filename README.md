@@ -1,14 +1,22 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=venom&height=200&color=0:0F172A,50:1D4ED8,100:06B6D4&text=Rhythm&fontColor=FFFFFF&fontSize=65&fontAlignY=45&desc=Full-Stack%20Web%20Developer&descSize=18&descAlignY=68&animation=fadeIn" width="100%" />
+<h1 align="center">Hey! <img src="client/public/images/developer.gif" height="30" width="30" alt="wave" /> I'm Md. Sami-El Bashar Rhythm</h1>
+
+<img src="client/public/images/banner.gif" alt="Banner" width="100%" />
 
 <br/>
 
-**Building web applications. Learning by shipping. Improving every day.**
+<a href="https://mdsamielbashar.com/"><img src="https://img.shields.io/badge/Portfolio-0F172A?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio" /></a>
+<a href="https://www.linkedin.com/in/md-sami-el-bashar-rhythm-24100b27b/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+<a href="mailto:mdsamielbashar@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
 
-[Portfolio](https://mdsamielbashar.com/) ·
-[LinkedIn](https://www.linkedin.com/in/md-sami-el-bashar-rhythm-24100b27b/) ·
-[Email](mailto:mdsamielbashar@gmail.com)
+</div>
+
+## 📌 About Me
+
+- 💡 Junior full-stack developer and Computer Science graduate with hands-on experience building and deploying TypeScript applications using React, Node.js/Express and PostgreSQL. Developed a multi-tenant CRM with database-level tenant isolation and role-based access control, alongside a movie-tracking app; the projects include 224 and 120 automated tests, respectively.
+
+<div align="center">
 
 <br/>
 
@@ -60,6 +68,6 @@ Docker · CI/CD · System Design · Backend Engineering
 
 <br/>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,100:1D4ED8&height=90&section=footer" width="100%" />
+<img src="client/public/images/dino.gif" alt="404" width="100%" />
 
 </div>
