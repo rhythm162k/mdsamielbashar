@@ -5,7 +5,7 @@ export const PROFILE = {
   short: "Rhythm",
   email: "mdsamielbashar@gmail.com",
   github: "https://github.com/rhythm162k",
-  linkedin: "https://www.linkedin.com/in/md-sami-el-bashar-rhythm-24100b27b",
+  linkedin: "https://www.linkedin.com/in/mdsamielbashar/",
   location: "Mymensingh, Bangladesh",
 };
 
@@ -93,7 +93,7 @@ export const PROJECTS = [
     repo: "https://github.com/rhythm162k/my_movie_diary",
     stats: [
       { to: 11, label: "REST API endpoints" },
-      { to: 120, label: "Automated tests" },
+      { to: 175, label: "Automated tests" },
       { to: 10, label: "bcrypt salt rounds" },
     ],
     points: [
