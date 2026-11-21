@@ -100,10 +100,14 @@ html.is-loading .hero-status {
   .hero {
     padding-bottom: 56px;
   }
+  .hero-title {
+    font-size: clamp(40px, 11.8vw, 68px);
+  }
   .hero-sub {
     margin-top: 22px;
   }
   .hero-cta {
+    row-gap: 12px;
     margin-top: 28px;
   }
   .hero-status {

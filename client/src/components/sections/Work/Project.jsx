@@ -1,9 +1,14 @@
+import { useId, useState } from "react";
 import Reveal from "../../ui/Reveal";
 import Media from "../../ui/Media";
 import CountUp from "../../ui/CountUp";
 import ArrowLink from "../../ui/ArrowLink";
 
 export default function Project({ project: p }) {
+  const detailsId = useId();
+  const [expanded, setExpanded] = useState(false);
+  const toggleLabel = expanded ? "See less" : "See more";
+
   return (
     <article className="project">
       <Reveal className="p-top">
@@ -38,21 +43,34 @@ export default function Project({ project: p }) {
         ))}
       </div>
 
-      <ul className="points">
-        {p.points.map((text, i) => (
-          <Reveal as="li" key={i} delay={i * 50}>
-            {text}
-          </Reveal>
-        ))}
-      </ul>
+      <button
+        className="p-details-toggle"
+        type="button"
+        aria-expanded={expanded}
+        aria-controls={detailsId}
+        aria-label={`${toggleLabel} about ${p.name}`}
+        onClick={() => setExpanded((current) => !current)}
+      >
+        {toggleLabel}
+      </button>
 
-      <Reveal className="tags">
-        {p.tags.map((t) => (
-          <span className="tag" key={t}>
-            {t}
-          </span>
-        ))}
-      </Reveal>
+      <div className="p-details" id={detailsId}>
+        <ul className="points">
+          {p.points.map((text, i) => (
+            <Reveal as="li" key={i} delay={i * 50}>
+              {text}
+            </Reveal>
+          ))}
+        </ul>
+
+        <Reveal className="tags">
+          {p.tags.map((t) => (
+            <span className="tag" key={t}>
+              {t}
+            </span>
+          ))}
+        </Reveal>
+      </div>
     </article>
   );
 }

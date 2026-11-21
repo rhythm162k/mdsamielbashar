@@ -74,3 +74,12 @@
     font-size: clamp(26px, 7vw, 32px);
   }
 }
+
+@media (max-width: 560px) {
+  .skill-items {
+    gap: 6px 16px;
+  }
+  .skill-items span {
+    font-size: clamp(18px, 4.8vw, 22px);
+  }
+}

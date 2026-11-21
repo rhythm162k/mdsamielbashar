@@ -217,6 +217,16 @@
   }
 }
 
+@media (max-width: 560px) {
+  .wordmark {
+    /* Leave room for all six letter masks within the page gutters. */
+    --wordmark-width: calc(
+      100vw - max(5vw, 20px, var(--safe-left)) - max(5vw, 20px, var(--safe-right))
+    );
+    font-size: min(21vw, calc(var(--wordmark-width) / 4.5));
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .wm-char {
     transform: none;
