@@ -4,6 +4,7 @@ const img = (file) => `${import.meta.env.BASE_URL}images/${file}`;
 export const IMAGES = {
   logo: img("logo.webp"), // square, shown tiny in the nav (128 x 128 is plenty)
   portrait: img("portrait.webp"), // 4:5 (1200 x 1500)
+  payraPortEms: img("payra-port-ems.webp"),
   movieDiary: img("movie-diary.webp"), // project screenshot (16:9 or similar)
   dumb_crm: img("dumb_crm.webp"),
 };

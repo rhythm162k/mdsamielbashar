@@ -47,13 +47,34 @@ export const NAV_LINKS = [
 export const HERO = {
   line1: "I build web apps,",
   line2: "front to back.",
-  sub: "Computer science graduate working with React, Node.js and PostgreSQL.",
+  sub: "Junior Software Engineer focused on full-stack development with TypeScript, React, Node.js, Express and PostgreSQL.",
 };
 
 export const STATEMENT =
   "I build web applications end to end: the interface people use, the API behind it, and the database underneath. I like getting the fundamentals right. Structure, security, and performance I can actually measure.";
 
 export const PROJECTS = [
+  {
+    name: "Employee Management System",
+    date: "Nov 2026",
+    status: "Deployed on AWS EC2 · Under review",
+    tagline:
+      "Built at the request of Payra Port Authority staff to streamline employee records, leave approvals and profile updates.",
+    image: IMAGES.payraPortEms,
+    live: "https://dumb-ems.459dj2wf82.workers.dev/",
+    liveLabel: "Public demo for reviewers",
+    stats: [
+      { to: 229, label: "Passing API tests" },
+      { to: 81.43, decimals: 2, suffix: "%", label: "Line coverage" },
+      { to: 78.68, decimals: 2, suffix: "%", label: "Branch coverage" },
+    ],
+    points: [
+      "Added bulk CSV and XLSX imports with validation previews, plus spreadsheet exports.",
+      "Enforced department-level access on the server and limited admin assignments to the root administrator. Added bcrypt hashing, PostgreSQL-backed sessions, CSRF protection and audit logging.",
+      "Parsing and validating 1,000 XLSX rows averaged 66.64 ms of local CPU time with stubbed database responses.",
+    ],
+    tags: ["PostgreSQL", "RBAC", "bcrypt", "AWS EC2", "CSV/XLSX"],
+  },
   {
     name: "Dumb CRM",
     date: "Nov 2026",
@@ -63,14 +84,15 @@ export const PROJECTS = [
     live: "https://dumb-crm-bjby.onrender.com/",
     repo: "https://github.com/rhythm162k/Dumb_CRM",
     stats: [
-      { to: 224, label: "Automated tests" },
+      { to: 224, label: "Automated API tests" },
       { to: 3, label: "Workspace roles" },
       { to: 5, label: "Core CRM modules" },
     ],
     points: [
       "Built a full-stack TypeScript CRM in an npm-workspaces monorepo using React, Express, PostgreSQL and Drizzle ORM.",
       "Implemented multi-tenant isolation with PostgreSQL Row-Level Security and role-based permissions for owners, admins and members.",
-      "Added JWT and Google OAuth authentication, shared Zod validation, audit logging, and secure CSV import/export.",
+      "Added JWT and Google OAuth 2.0 authentication, shared Zod validation, audit logging and safeguards for CSV imports and exports.",
+      "Reached 94.8% statement coverage and 90% branch coverage.",
     ],
     tags: [
       "React",
@@ -93,13 +115,14 @@ export const PROJECTS = [
     repo: "https://github.com/rhythm162k/my_movie_diary",
     stats: [
       { to: 11, label: "REST API endpoints" },
-      { to: 175, label: "Automated tests" },
-      { to: 10, label: "bcrypt salt rounds" },
+      { to: 175, label: "Integration tests" },
+      { to: 99.5, decimals: 1, suffix: "%", label: "API statement coverage" },
     ],
     points: [
       "Converted the full-stack application to TypeScript, with a React frontend, Express API and Supabase-hosted PostgreSQL.",
-      "Implemented PostgreSQL-backed sessions, secure HTTP-only cookies, bcrypt password hashing and Google OAuth 2.0.",
-      "Integrated OMDb poster lookup and user-scoped movie operations, backed by 120 integration tests and Dockerized local development.",
+      "Added Passport.js, Google OAuth 2.0, bcrypt password hashing, PostgreSQL-backed sessions and HTTP-only cookies. Applied rate limits and restricted movie operations to their owners.",
+      "Used Vitest and Supertest with an isolated database and reached 97% API branch coverage.",
+      "Added OMDb poster lookup and Docker for local development.",
     ],
     tags: [
       "React",
@@ -125,25 +148,27 @@ export const EDUCATION = {
     ["GPA", "3.72 / 4.0"],
     [
       "Coursework",
-      "Data Structures & Algorithms, Object Oriented Programming, AI/ML",
+      "Data Structures and Algorithms, Object-Oriented Programming, AI and Machine Learning",
     ],
-    ["Also", "AWS Cloud Practitioner Essentials, September 2026"],
+    ["Training", "AWS Cloud Practitioner Essentials (course), September 2026"],
   ],
 };
 
 export const SKILLS = [
-  ["Frontend", ["React", "TypeScript", "JavaScript", "HTML", "CSS", "Vite"]],
+  ["Languages", ["TypeScript", "JavaScript (ES6+)", "SQL", "C", "HTML5", "CSS3"]],
+  ["Frontend", ["React", "Vite", "Responsive design"]],
   [
-    "Backend",
+    "Backend & APIs",
     [
       "Node.js",
       "Express.js",
       "REST API design",
       "JWT",
-      "Session auth",
-      "OAuth 2.0",
+      "Session-based authentication",
+      "Google OAuth 2.0",
       "bcrypt",
-      "Zod",
+      "Role-based access control (RBAC)",
+      "MVC architecture",
       "CORS",
     ],
   ],
@@ -151,19 +176,27 @@ export const SKILLS = [
     "Databases",
     [
       "PostgreSQL",
-      "SQL",
       "Drizzle ORM",
       "Relational schema design",
-      "Row-Level Security",
+      "Row-Level Security (RLS)",
+      "Supabase",
     ],
   ],
   [
-    "Testing",
-    ["Vitest", "Supertest", "React Testing Library", "Integration testing"],
+    "Testing & Validation",
+    ["Vitest", "Supertest", "React Testing Library", "Integration testing", "Zod"],
   ],
   [
-    "Tools & Platforms",
-    ["Git", "GitHub", "Docker", "Postman", "Render", "Supabase"],
+    "Tools & Deployment",
+    [
+      "Git",
+      "GitHub Actions (CI/CD)",
+      "Docker Compose",
+      "AWS EC2",
+      "Cloudflare Workers",
+      "Render",
+      "Postman",
+    ],
   ],
 ];
 

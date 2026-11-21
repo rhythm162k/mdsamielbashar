@@ -7,14 +7,14 @@
 <br/>
 
 <a href="https://mdsamielbashar.com/"><img src="https://img.shields.io/badge/Portfolio-0F172A?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio" /></a>
-<a href="https://www.linkedin.com/in/md-sami-el-bashar-rhythm-24100b27b/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+<a href="https://www.linkedin.com/in/mdsamielbashar/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
 <a href="mailto:mdsamielbashar@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
 
 </div>
 
 ## 📌 About Me
 
-- 💡 Junior full-stack developer and Computer Science graduate with hands-on experience building and deploying TypeScript applications using React, Node.js/Express and PostgreSQL. Developed a multi-tenant CRM with database-level tenant isolation and role-based access control, alongside a movie-tracking app; the projects include 224 and 120 automated tests, respectively.
+- 💡 Junior Software Engineer focused on full-stack development with TypeScript, React, Node.js, Express and PostgreSQL. Built and deployed an employee management system for Payra Port Authority on AWS EC2, with department-level access controls and 229 passing API tests. The system is under review.
 
 <div align="center">
 
@@ -34,6 +34,17 @@
 
 <table>
 <tr>
+<td colspan="2" valign="top">
+
+<h3>Employee Management System | Payra Port Authority</h3>
+
+Manages employee records, leave approvals and profile updates. Deployed on AWS EC2 and under review.
+
+<a href="https://dumb-ems.459dj2wf82.workers.dev/">Public demo for reviewers</a>
+
+</td>
+</tr>
+<tr>
 <td width="50%" valign="top">
 
 <h3>🏢 Dumb CRM</h3>
@@ -49,7 +60,7 @@ A multi-tenant CRM with workspace isolation, role-based access control, and 224 
 
 <h3>🎬 My Movie Diary</h3>
 
-A full-stack movie diary with Google OAuth, session authentication, and 120 automated tests.
+A full-stack movie diary with Google OAuth, session authentication and 175 integration tests.
 
 **React · TypeScript · Node.js · Express · PostgreSQL**
 

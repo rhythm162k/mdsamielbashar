@@ -7,12 +7,15 @@ export default function Project({ project: p }) {
   return (
     <article className="project">
       <Reveal className="p-top">
-        <span className="eyebrow">{p.date}</span>
+        <span className="eyebrow">
+          {p.date}
+          {p.status && ` · ${p.status}`}
+        </span>
         <h3 className="p-title">{p.name}</h3>
         <p className="p-tag">{p.tagline}</p>
         <div className="p-links">
-          <ArrowLink href={p.live}>Live demo</ArrowLink>
-          <ArrowLink href={p.repo}>GitHub</ArrowLink>
+          <ArrowLink href={p.live}>{p.liveLabel ?? "Live demo"}</ArrowLink>
+          {p.repo && <ArrowLink href={p.repo}>GitHub</ArrowLink>}
         </div>
       </Reveal>
 
@@ -23,7 +26,12 @@ export default function Project({ project: p }) {
         {p.stats.map((s, i) => (
           <Reveal className="stat" key={s.label} delay={i * 100}>
             <div className="stat-n">
-              <CountUp to={s.to} prefix={s.prefix} suffix={s.suffix} />
+              <CountUp
+                to={s.to}
+                prefix={s.prefix}
+                suffix={s.suffix}
+                decimals={s.decimals}
+              />
             </div>
             <div className="stat-l">{s.label}</div>
           </Reveal>
