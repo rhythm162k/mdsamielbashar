@@ -1,0 +1,61 @@
+name: Deploy to Cloudflare Workers
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cloudflare-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci --no-audit --no-fund
+      - run: npm test
+      - run: npm run build
+
+      - name: Deploy Worker and static assets
+        run: npx --no-install wrangler deploy
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.PORTFOLIO_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.PORTFOLIO_API_TOKEN }}
+
+      - name: Verify the build on mdsamielbashar.com
+        shell: bash
+        run: |
+          asset_pattern='\./assets/index-[A-Za-z0-9_-]+\.(css|js)'
+          expected_assets=$(grep -oE "$asset_pattern" client/dist/index.html | sort -u)
+
+          for attempt in {1..6}; do
+            if curl --fail --silent --show-error --location --max-time 10 \
+              https://mdsamielbashar.com/ --output "$RUNNER_TEMP/portfolio-home.html"; then
+              live_assets=$(grep -oE "$asset_pattern" "$RUNNER_TEMP/portfolio-home.html" | sort -u || true)
+              if [[ "$live_assets" == "$expected_assets" ]]; then
+                exit 0
+              fi
+            fi
+
+            if [[ "$attempt" -lt 6 ]]; then
+              sleep 10
+            fi
+          done
+
+          echo '::error::Cloudflare accepted the deployment, but mdsamielbashar.com is not serving its assets. Check the custom domain routing and cache in Cloudflare.'
+          exit 1
